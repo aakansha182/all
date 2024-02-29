@@ -13,27 +13,26 @@ const AccountSettings = ({ user, fetchUserData }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.set('username', user?.username);
-    formData.set('profileimage', selectedFile);
+    formData.append('username', user?.username);
+    formData.append('profileimage', selectedFile);
 
-    axios.post("http://localhost:3001/upload-user-pfp", formData)
-      .then(response => {
-        console.log(response);
-        fetchUserData(); // Assuming you want to call this after a successful upload
-      })
-      .catch(error => {
-        console.error('Error during the file upload:', error.response || error);
-      });
+    try {
+      await axios.post("http://localhost:3001/upload-user-pfp", formData);
+      fetchUserData(); // Refetch user data after successful upload
+    } catch (error) {
+      console.error('Error during the file upload:', error);
+    }
   };
+
 
   return (
     <div className='accountsettings'>
-      <h1 className='mainhead1'>Personal Information</h1>
-      <form onSubmit={handleSubmit}>
-        <div className='form-group'>
-          <label htmlFor='profilePhoto'>Profile Photo <span>*</span></label>
-          <input type='file' id='profilePhoto' name='profileimage' onChange={handleFileChange} />
-        </div>
+    <h1 className='mainhead1'>Personal Information</h1>
+    <form onSubmit={handleSubmit}>
+      <div className='form-group'>
+        <label htmlFor='profilePhoto'>Profile Photo <span>*</span></label>
+        <input type='file' id='profilePhoto' name='profileimage' onChange={handleFileChange} />
+      </div>
         <button type='submit' className='mainbutton1'>Save Changes</button>
       </form>
     </div>

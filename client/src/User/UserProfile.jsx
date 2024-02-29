@@ -16,22 +16,27 @@ const UserProfile = () => {
   const [user, setUser] = useState(null);
   const [isPremium, setIsPremium] = useState(false); // State to track premium status
 
+ 
+  const fetchUserData = async () => {
+    try {
+      // Adjust the API endpoint or data as per your backend requirements
+      const response = await axios.post('http://localhost:3001/get-user', { username });
+      if (response.data && response.data.user) {
+        setUser(response.data.user);
+        setIsPremium(response.data.user.isPremium);
+    } else {
+        console.error('User fetch failed:', response.data.message || 'No user data');
+    }
+    
+    } catch (error) {
+      console.error('Failed to fetch user data:', error);
+    }
+  };
   useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.post('http://localhost:3001/get-user', { username });
-        if (response.data && response.data.user) {
-          setUser(response.data.user);
-          setIsPremium(response.data.user.isPremium); // Set premium status
-        }
-      } catch (error) {
-        console.error('Failed to fetch user data:', error);
-      }
-    };
-
     fetchUserData();
-  }, [username]);
+}, [username]);
 
+  
   return (
     <div className="userprofile">
       <SingleBanner
@@ -49,7 +54,7 @@ const UserProfile = () => {
           <UserSidebar activepage={activepage} isPremium={isPremium} />
         </div>
         <div className="right">
-          {activepage === 'accountsettings' && <AccountSettings user={user} />}
+          {activepage === 'accountsettings' && <AccountSettings user={user} fetchUserData={fetchUserData} />}
           {activepage === 'changepassword' && <ChangePassword />}
           {activepage === 'yourbooks' && <YourBooks />}
           {activepage === 'writebook' && isPremium && <WriteBook />}
