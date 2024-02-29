@@ -1,0 +1,105 @@
+.yourbooks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.yourbooks table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.yourbooks thead tr {
+    background-color: var(--col1);
+    color: #fff;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.yourbooks tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.yourbooks th,
+.yourbooks td {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.yourbooks tr th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.yourbooks tr td {
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 5px;
+    color: grey;
+}
+
+.yourbooks tr td button {
+    padding: 5px 20px;
+    margin: 0px;
+    font-size: 16px;
+}
+
+.yourbooks tr td .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.yourbooks tr td .available {
+    background-color: green;
+}
+
+.yourbooks tr td .checked-out {
+    background-color: orange;
+}
+
+.yourbooks tr td .reserved {
+    background-color: rgb(255, 81, 81);
+}
+
+@media screen and (max-width: 1200px) {
+    .yourbooks thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .yourbooks tr {
+        display: block;
+        margin-bottom: .625em;
+        border: none;
+    }
+
+    .yourbooks td {
+        border: none;
+        display: block;
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .yourbooks td::before {
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: left;
+    }
+}

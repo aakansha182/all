@@ -1,0 +1,65 @@
+/* SuccessPage CSS */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.success-container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  position: relative; /* Establishes a positioning context */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  width: 100vw; /* Full viewport width */
+  height: 50vh; /* Full viewport height */
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box; /* Ensures padding doesn't add to the width/height */
+  box-shadow: 0 4px 6px rgba(168, 192, 230, 0.1);
+}
+
+.success-content {
+  color: #ec230d;
+  text-align: center;
+  z-index: auto; /* Ensures content stays above the positioned image */
+}
+
+.quote-container {
+  position: absolute; /* Positioned absolutely relative to its parent */
+  right: 20px; /* Distance from the right edge of the viewport */
+  top: 80px; /* Distance from the top edge of the viewport */
+  text-align: right;
+  z-index: 1; /* Lower z-index so it doesn't overlap content unnecessarily */
+}
+
+.quote-image {
+  width: 300px; /* Adjust the width as needed */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 5px;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 18px;
+  color: #0d57ec;
+  text-align: right;
+}
+
+/* Additional styles for GIF container */
+.videoDiv {
+  width: 40%; /* Adjust the width as needed */
+  height: 80%; /* Maintains aspect ratio */
+  position: absolute;
+  left: 20px; /* Distance from the left edge of the viewport */
+  top: 20px; /* Distance from the top edge of the viewport */
+}
+
+.absolut {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

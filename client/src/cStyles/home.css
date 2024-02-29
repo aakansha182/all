@@ -1,0 +1,39 @@
+.App {
+  @apply flex justify-center items-center;
+}
+
+:root {
+  --primaryColor: hsl(96, 98%, 57%);
+  --hoverColor: hsl(52, 100%, 70%);
+  --paleGreen: hsl(96, 75%, 89%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 0%);
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(113, 11%, 85%);
+  --inputColor: hsl(330, 12%, 97%);
+  --inputColor: hsl(154, 14%, 90%);
+  --biggestFontSize: 2.5rem;
+  --h2FontSize: 1.25rem;
+  --h1FontSize: 1.5rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+html {
+  @apply text-[85%];
+  scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar {
+  @apply w-[0.5px];
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-[#53c28b];
+}
+.scrollDiv::-webkit-scrollbar {
+  display: none;
+}

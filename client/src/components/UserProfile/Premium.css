@@ -1,0 +1,140 @@
+.premium-container {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the start of the container */
+  flex-wrap: wrap;
+}
+
+  
+  .subscriptions {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 20px;
+    perspective: 1000px; /* Needed for the 3D tilting effect */
+  }
+  
+  .subscription-card {
+    width: calc(50% - 25px);
+    max-width: 300px;
+    min-width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.5s;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    cursor: pointer;
+  }
+  
+  .subscription-card:hover {
+    transform: rotateY(20deg); /* Tilt card on hover for a 'page turning' effect */
+  }
+  
+  .card-title {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .card-price {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .card-benefits {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .card-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .card-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .subscriptions {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px; /* Increase gap for better separation on smaller screens */
+    }
+  
+    .subscription-card {
+      width: 80%;
+    }
+  }
+  
+  .premium-status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Adjust based on your layout */
+    background: linear-gradient(145deg, #1db954, #1ed760);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .premium-content {
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .premium-badge {
+    animation: rotate 5s linear infinite;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: gold;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .premium-badge svg {
+    color: #fff;
+  }
+  
+  .premium-congratulations, .premium-welcome, .premium-details p {
+    margin: 0 0 10px;
+  }
+  
+  .premium-expiry {
+    font-weight: bold;
+  }
+  

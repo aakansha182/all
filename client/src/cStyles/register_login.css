@@ -1,0 +1,152 @@
+.flexDiv {
+  @apply flex items-center justify-center;
+}
+.gridDiv {
+  @apply grid items-center gap-4;
+}
+.icon {
+  @apply text-[length:var(--h2FontSize)] cursor-pointer;
+}
+.showMessage {
+  @apply block text-[color:var(--whiteColor)] text-center p-[9px] rounded-sm;
+  background: rgb(255, 69, 0);
+}
+.btn {
+  @apply cursor-pointer active:scale-90 text-[rgb(255,255,0)] px-4 py-[0.8rem] rounded-lg border-[none] hover:text-white outline-none hover:bg-[color:var(--paleGreen)] ease-in-out duration-300;
+}
+.btn .icon {
+  @apply ml-2;
+}
+.loginPage,
+.registerPage {
+  @apply h-screen w-full overflow-hidden shadow-[0_7px_50px_rgb(0,0,0)] m-auto rounded-[1px];
+}
+.loginPage .contanier,
+.registerPage .contanier {
+  @apply h-screen w-full bg-white dark:bg-black justify-between m-auto rounded-[0_px];
+  /* background: hsl(0, 0%, 0%); */
+}
+.loginPage .contanier .videoDiv,
+.registerPage .contanier .videoDiv {
+  @apply relative flex basis-full w-full h-full text-center justify-center flex-col overflow-hidden m-auto px-6 py-0 rounded-[0_px];
+}
+.loginPage .contanier .videoDiv img,
+.loginPage .contanier .videoDiv .footerDiv,
+.registerPage .contanier .videoDiv img,
+.registerPage .contanier .videoDiv .footerDiv {
+  @apply absolute;
+}
+.loginPage .contanier .videoDiv img,
+.registerPage .contanier .videoDiv img {
+  @apply h-[110%] w-full object-cover inset-0;
+  /* -o-object-fit: cover; */
+}
+.loginPage .contanier .videoDiv .textDiv,
+.registerPage .contanier .videoDiv .textDiv {
+  @apply absolute h-10 px-4 py-0 left-[5px] right-2.5 top-[1%];
+}
+.loginPage .contanier .videoDiv .textDiv .title,
+.registerPage .contanier .videoDiv .textDiv .title {
+  @apply text-[orangered] text-[35px] font-extrabold;
+}
+.loginPage .contanier .videoDiv .textDiv p,
+.registerPage .contanier .videoDiv .textDiv p {
+  @apply text-[orangered] font-[550] p-4;
+}
+.loginPage .contanier .videoDiv .footerDiv,
+.registerPage .contanier .videoDiv .footerDiv {
+  @apply h-[60px] justify-between backdrop-blur-[1px] bg-[#00000052] dark:bg-[#FFFFFF3F] px-4 py-0 rounded-[10px] bottom-2.5 inset-x-2.5;
+  -webkit-backdrop-filter: blur(1px);
+}
+.loginPage .contanier .videoDiv .footerDiv .text,
+.registerPage .contanier .videoDiv .footerDiv .text {
+  @apply text-white;
+}
+.loginPage .contanier .videoDiv .footerDiv .btn,
+.registerPage .contanier .videoDiv .footerDiv .btn {
+  @apply text-[color:var(--primaryColor)] bg-[color:var(--whiteColor)] font-normal transition-[0.3s] duration-[ease] px-6 py-[0.8rem] rounded-[10px];
+}
+.loginPage .contanier .videoDiv .footerDiv .btn:hover,
+.registerPage .contanier .videoDiv .footerDiv .btn:hover {
+  @apply bg-[color:var(--hoverColor)] text-[color:var(--blackColor)] ease-in-out duration-300;
+}
+
+.error {
+  @apply text-red-500;
+}
+.scrollDi {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.loginPage .contanier .fromDiv,
+.registerPage .contanier .fromDiv {
+  @apply basis-6/12 h-[100%] flex flex-col gap-6 translate-y-[-1rem] m-auto;
+}
+.loginPage .contanier .fromDiv .headerDiv,
+.registerPage .contanier .fromDiv .headerDiv {
+  @apply flex flex-col items-center text-center px-0 py-6;
+}
+.loginPage .contanier .fromDiv .headerDiv img,
+.registerPage .contanier .fromDiv .headerDiv img {
+  @apply w-[300px] pb-1;
+}
+.loginPage .contanier .fromDiv .headerDiv h3,
+.registerPage .contanier .fromDiv .headerDiv h3 {
+  @apply text-xl text-black dark:text-white font-semibold;
+}
+
+.loginPage .contanier .fromDiv .form,
+.registerPage .contanier .fromDiv .form {
+  @apply gridDiv flexDiv gap-2 border-[0px] border-white;
+}
+.loginPage .contanier .fromDiv .form .inputDiv .icon,
+.registerPage .contanier .fromDiv .form .inputDiv .icon {
+  @apply text-[orangered];
+}
+.loginPage .contanier .fromDiv .form .inputDiv input,
+.registerPage .contanier .fromDiv .form .inputDiv input {
+  @apply w-full bg-transparent border-none outline-none;
+}
+.loginPage .contanier .fromDiv .form .inputDiv label,
+.registerPage .contanier .fromDiv .form .inputDiv label {
+  @apply text-white font-normal text-sm block px-0 py-2;
+}
+.loginPage .contanier .fromDiv .form .inputDiv .radio,
+.registerPage .contanier .fromDiv .form .inputDiv .radio {
+  @apply bg-white gap-2 p-4 rounded-[10px];
+}
+.loginPage .contanier .fromDiv .form .inputDiv .input,
+.registerPage .contanier .fromDiv .form .inputDiv .input {
+  @apply gap-2 px-4 py-2 rounded-[10px] border-[rgb(231,9,9)] border-[1px] hover:text-white focus:text-white hover:bg-transparent focus:bg-transparent ease-in-out duration-500;
+  background: rgb(235, 220, 220);
+}
+.loginPage .contanier .fromDiv .form .btn,
+.registerPage .contanier .fromDiv .form .btn {
+  @apply bg-[orangered] text-white items-center justify-center text-base w-full gap-2 transition-[0.3s] ease-in-out duration-300 m-auto p-[0.8rem] rounded-[10px];
+}
+.loginPage .contanier .fromDiv .form .btn .icon,
+.registerPage .contanier .fromDiv .form .btn .icon {
+  @apply text-[25px] transition-[0.3s] ease-in-out duration-500 text-white;
+}
+.loginPage .contanier .fromDiv .form .btn:hover,
+.registerPage .contanier .fromDiv .form .btn:hover {
+  @apply bg-[color:var(--hoverColor)] text-[color:var(--blackColor)] ease-in-out duration-300;
+}
+.loginPage .contanier .fromDiv .form .btn:hover .icon,
+.registerPage .contanier .fromDiv .form .btn:hover .icon {
+  @apply text-[color:var(--blackColor)] translate-x-[5px] ease-in-out duration-300;
+}
+.loginPage .contanier .fromDiv .form .forgotPassword,
+.registerPage .contanier .fromDiv .form .forgotPassword {
+  @apply text-sm text-black dark:text-white opacity-70 text-center;
+}
+.loginPage .contanier .fromDiv .form .forgotPassword a {
+  @apply underline cursor-pointer opacity-100 text-[orangered] hover:text-orange-400 active:text-[0.8rem];
+}
+
+.logo-light {
+  @apply flex dark:hidden w-auto h-auto;
+}
+.logo-dark {
+  @apply hidden dark:flex w-auto h-auto scale-95 -mt-1;
+}
