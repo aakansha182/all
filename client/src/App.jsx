@@ -39,6 +39,7 @@ import SingleBanner from "./components/Banners/SingleBanner.jsx";
 import UserSidebar from "./components/UserProfile/UserSidebar.jsx";
 import YourBooks from "./components/UserProfile/YourBooks.jsx";
 import WriteBook from "./components/UserProfile/WriteBook.jsx";
+import YourAddedBooks from "./components/UserProfile/YourAddedBooks.jsx";
 import ChangePassword from "./components/UserProfile/ChangePassword.jsx";
 import Premium from "./components/UserProfile/Premium.jsx";
 import LegalNotice from "./components/UserProfile/LegalNotice.jsx";
@@ -101,6 +102,7 @@ const App = () => {
               <Route exact path="/writebook" element={<WriteBook/>} />
               <Route exact path="/premium" element={<Premium />} />
               <Route exact path="/legalnotice" element={<LegalNotice />} />
+              <Route exact path="/youraddedbooks" element={<YourAddedBooks/>}/>
               <Route
                 exact
                 path="/changepassword"

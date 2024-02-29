@@ -10,6 +10,7 @@ import WriteBook from '../components/UserProfile/WriteBook';
 import Premium from '../components/UserProfile/Premium';
 import LegalNotice from '../components/UserProfile/LegalNotice';
 import { useParams } from 'react-router-dom';
+import YourAddedBooks from "../components/UserProfile/YourAddedBooks.jsx";
 
 const UserProfile = () => {
   const { username, activepage } = useParams();
@@ -58,6 +59,7 @@ const UserProfile = () => {
           {activepage === 'changepassword' && <ChangePassword />}
           {activepage === 'yourbooks' && <YourBooks />}
           {activepage === 'writebook' && isPremium && <WriteBook />}
+          {activepage === 'youraddedbooks' && isPremium && <YourAddedBooks />}
           {activepage === 'premium' && <Premium />}
           {activepage === 'legalnotice' && <LegalNotice />}
         </div>

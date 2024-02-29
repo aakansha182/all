@@ -6,7 +6,9 @@ import { FaRegEye } from "react-icons/fa6";
 import { GiSpellBook } from "react-icons/gi";
 import { TbPencilStar } from "react-icons/tb";
 import { IoDocumentTextOutline } from "react-icons/io5";
-import { MdAddBox } from "react-icons/md"; // Icon for Add Book, assuming usage of Material Design icons
+import { MdAddBox } from "react-icons/md"; 
+import { BiBookAdd } from "react-icons/bi"; // Icon for Your Added Books
+
 
 
 const UserSidebar = ({ activepage }) => {
@@ -85,6 +87,22 @@ const UserSidebar = ({ activepage }) => {
             </Link>
         )
       }
+      {
+        isPremium && (
+          activepage === 'youraddedbooks' ?
+            <div className='s2'>
+              <BiBookAdd size={25} />
+              <span>Your Added Books</span>
+            </div>
+            :
+            <Link to={`/user/${uData?.username}/youraddedbooks`} className='stylenone'>
+              <div className='s1'>
+                <BiBookAdd size={25} />
+                <span>Your Added Books</span>
+              </div>
+            </Link>
+        )
+}
 
       {
         activepage === 'premium' ?
